@@ -49,8 +49,14 @@ def perform_in(srch_str, server):
             resources.append(entry.resource)
     return resources
 
+#Patients diagnosed with diabetes
+search_str = 'Patient?_has:Condition:subject:code:73211009,399144008,11530004,9414007,315051004,9414007,15771004,15777000,44054006'
 
-search_str = 'Patient?_has:Condition:subject:code:73211009'
+#Patients diagnosed with sinusitis
+#search_str = 'Patient?_has:Condition:subject:code=444814009,75498004,36971009,40055000'
+
+#Patients diagnosed with asthma
+#search_str = 'Patient?_has:Condition:subject:code=195917001'
 
 bundle1 = perform_in(search_str,smart.server)
 bundle2 = perform_in(search_str,smart2.server)
