@@ -81,23 +81,28 @@ def calculate_age(born):
     today = date.today()
     return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
 
+print("Cohort Size %s" %cohortSize)
 
 # Loop over patients in bundle
 for patients in bundle1:
     entry = patients.as_json()
-    dob = entry['birthDate']
-    age_i = calculate_age(dob)
-    ageSum = ageSum+age_i
-
+    if 'birthDate' in entry.keys():
+        dob = entry['birthDate']
+        age_i = calculate_age(dob)
+        ageSum = ageSum+age_i
+    else:
+        cohortSize =cohortSize-1
 
 for patients in bundle2:
     entry = patients.as_json()
-    dob = entry['birthDate']
-    age_i = calculate_age(dob)
-    ageSum = ageSum+age_i
+    if 'birthDate' in entry.keys():
+        dob = entry['birthDate']
+        age_i = calculate_age(dob)
+        ageSum = ageSum+age_i
+    else:
+        cohortSize =cohortSize-1
 
-
-print("Cohort size: %s" % cohortSize)
+print("Cohort size after eliminating patients with no age information: %s" % cohortSize)
 
 # Calculate mean age
 meanAge = None
