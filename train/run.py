@@ -47,6 +47,7 @@ def perform_in(srch_str, server):
     return resources
 
 #Patients diagnosed with diabetes
+print('Patient cohort for Diabetes')
 search_str = 'Patient?_has:Condition:subject:code:73211009,399144008,11530004,9414007,315051004,9414007,15771004,15777000,44054006'
 cohort = perform_in(search_str,smart.server)
 
@@ -61,7 +62,7 @@ def calculate_age(born):
     today = date.today()
     return today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
 
-print("Retrieved cohort size %s"%cohortSize)
+print("Retrieved cohort size %s" %cohortSize)
 
 # Loop over all patients in bundle
 for patients in cohort:
