@@ -29,4 +29,4 @@ When opening the notebook, the control station first identifies the data station
 Third, the control post will send the *same* train towards a specific RDF (SPARQL) endpoint (listed in the available data stations), and retrieve the results of the application after execution.
 
 ## Conclusion
-This codebase shows that the PHT can be agnostic to the underlying data used. However, as developers of applications/analysis scripts/trains cannot see the actual data, we have to rely on FAIR data descriptions. If FAIR data descriptions are available, applications/trains should be able to interpret these descriptions, and request the data accordingly.
+This codebase shows that the PHT can be agnostic to the underlying data used. However, as developers of applications/scripts/trains cannot see the actual data, we have to rely on FAIR data descriptions. If FAIR data descriptions are available, applications/trains should be able to interpret these descriptions, and request the data accordingly.
