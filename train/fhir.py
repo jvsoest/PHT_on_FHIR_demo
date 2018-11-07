@@ -54,15 +54,15 @@ def runCohortCounter(endpointUrl, endpointToken):
 
     urlBase = endpointUrl
     #Patients diagnosed with diabetes
-    #print('Patient cohort for Diabetes')
-    #search_str = 'Condition?_include=Condition:patient&code=73211009,399144008,11530004,9414007,315051004,9414007,15771004'
+    print('Patient cohort for Diabetes')
+    search_str = 'Condition?_include=Condition:patient&code=73211009,399144008,11530004,9414007,315051004,9414007,15771004'
 
-    print('Patient cohort for asthma')
-    search_str = 'Condition?_include=Condition:patient&code=195917001'
+   # print('Patient cohort for asthma')
+    #search_str = 'Condition?_include=Condition:patient&code=195917001'
     cohort = perform_in(search_str,smart.server,urlBase)
 
     results = len(cohort)
-    cohortSize = results/2
+    cohortSize = int(results/2)
     print("Retrieved cohort size %s" %cohortSize)
 
     ageSum = 0
