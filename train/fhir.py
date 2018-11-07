@@ -89,10 +89,10 @@ def runCohortCounter(endpointUrl, endpointToken):
     # Calculate mean age
     meanAge = None
     if cohortSize > 0:
-        meanAge = ageSum / cohortSize
+        meanAge = ageSum / results
         print("Mean age in cohort: %s" % meanAge)
 
     return {
-        'cohortCount': cohortSize,
+        'cohortCount': results,
         'meanAge': meanAge
     }
