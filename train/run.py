@@ -5,7 +5,7 @@ endpointType = "FHIR"
 if os.environ.get("endpointType") != None:
     endpointType = os.environ.get("endpointType")
 
-endpointUrl = "http://hapi.fhir.org/baseDstu3"#"https://syntheticmass.mitre.org/fhir"
+endpointUrl =  "http://hapi.fhir.org/baseDstu3" #"https://syntheticmass.mitre.org/fhir"
 if os.environ.get("endpointUrl") != None:
     endpointUrl = os.environ.get("endpointUrl")
 
