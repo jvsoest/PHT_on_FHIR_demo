@@ -30,7 +30,6 @@ def perform_in(srch_str, server,apiBase):
     while True:
         if bundleCur['link'][1]['relation'] != 'previous':
             from fhirclient.models import bundle
-            bundleAll = list()
             url = bundleCur['link'][1]['url']
             urlString = url.replace(apiBase, '')
             bundleNext = server.request_json(urlString)
