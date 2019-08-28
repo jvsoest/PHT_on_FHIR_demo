@@ -1,6 +1,9 @@
 # Personal Health Train on FHIR demo
 
 Welcome to the Personal Health Train on FHIR demo. In this demo, we want to show how the Personal Health Train and FHIR can work together.
+
+**tl/dr: see [control/pht_execution_notebook.ipynb](control/pht_execution_notebook.ipynb) to run the PHT cohort counter.**
+
 The basic technical essence of the Personal Health Train is to use computational resources at the data source. This means:
 * we can calculate information at the source
 * we don't have to transfer data for calculation purposes, hence preserving patients' privacy
