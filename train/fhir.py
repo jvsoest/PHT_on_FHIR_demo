@@ -6,7 +6,7 @@ from datetime import date
 from fhirclient.models import fhirsearch
 
 
-def perform_in(srch_str, server,apiBase):
+def perform_in(srch_str,server,apiBase):
     """ Execute the search URL against the given server.
 
     :param server: The server against which to perform the search
@@ -15,7 +15,7 @@ def perform_in(srch_str, server,apiBase):
 
     from fhirclient.models import bundle
     if server is None:
-        raise Exception("Need a server to perform search")
+        raise Exception("Need a server url to perform search")
     resources = []
     bundleBase = server.request_json(srch_str)
     bundleCur = bundleBase
@@ -52,10 +52,13 @@ def runCohortCounter(endpointUrl, endpointToken):
         'api_base': endpointUrl
     })
 
+    smart.ready
+
+
     urlBase = endpointUrl
     #Patients diagnosed with diabetes
     print('Patient cohort for Diabetes')
-    search_str = 'Condition?_include=Condition:patient&code=73211009,399144008,11530004,9414007,315051004,9414007,15771004'
+    search_str = 'Condition?_include=Condition:patient&code:below=http://snomed.info/sct|73211009'
 
    # print('Patient cohort for asthma')
     #search_str = 'Condition?_include=Condition:patient&code=195917001'
