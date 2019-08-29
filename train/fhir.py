@@ -25,7 +25,7 @@ def perform_in(srch_str,server,apiBase):
             resources.append(entry.resource)
 
     while True:
-        if bundleCur['link'][1]['relation'] != 'previous':
+        if len(bundleCur['link'])>1 and bundleCur['link'][1]['relation'] != 'previous' :
             from fhirclient.models import bundle
             url = bundleCur['link'][1]['url']
             urlString = url.replace(apiBase, '')
